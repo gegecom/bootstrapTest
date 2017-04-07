@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        header{
+            width: 100%;
+            height: 700px;
+            background-color: #FFFFFF;
+            background:url("../images/snowground.png") no-repeat 0px 200px, url("../images/snowSky2.png") repeat 0px 0px;
+            animation: animateErrorIcon 10s linear;
+            /*background-position:0% 100%;*/
+            /*background-size: 100% 30%, 100% 100%;*/
+            /*background-repeat:no-repeat, no-repeat;*/
+        }
+        @keyframes animateErrorIcon  {
+            0%{
+                background-position: 0px 200px,0px 0px;
+            }
+            100%{
+                background-position: 0px 200px,0px 500px;
+            }
+        }
+        .snowerDiv{
+
+            width: 100%;
+            height: 100%;
+        }
+        .snower{
+            margin: 400px 0 0 75%;
+            width: 100px;
+            height: 150px;
+
+        }
+    </style>
+</head>
+<body>
+<header>
+<div class="snowerDiv">
+    <img class="snower" src="../images/snower.png">
+</div>
+
+
+</header>
+</body>
+</html>

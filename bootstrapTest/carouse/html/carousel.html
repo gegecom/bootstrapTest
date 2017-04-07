@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .wrap {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin:0 auto;
+            /*margin-left: auto;*/
+            width: 800px;
+            /*border: 1px solid;*/
+        }
+      /*  .wrap{
+            width: 80%;
+            margin-left: 10%;
+            height: auto;
+        }*/
+        .wrap .pic{
+            position: relative;
+            width: 800px;
+            height: 500px;
+            border:1px solid;
+        }
+        .wrap .pic img{
+            position: absolute;
+            left:0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .wrap .btn{
+            position: relative;
+            width: 800px;
+            margin: -40% auto;
+
+        }
+        .wrap .btn span{
+            display: block;
+            width: 50px;
+            height: 90px;
+            background-color: rgba(0,0,0,0.5);
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            line-height: 90px;
+        }
+        .wrap .btn  .next{
+            position: absolute;
+            right: -0px;
+        }
+        .wrap .lib{
+            position: absolute;
+            bottom: 34%;
+            left: 50%;
+            display: flex;/*声明弹性盒子*/
+            flex-direction: row;
+            justify-content: center;
+            margin-left: -65px;
+            width: 200px;
+            height: 25px;
+            background: rgba(0,0,0,.5);
+        }
+        .wrap .lib span{
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #fff;
+            margin: 5px;
+            border-radius: 50%;
+            line-height: inherit;
+        }
+    </style>
+    <script src="../js/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="wrap">
+    <div class="pic">
+        <img src="../images/timg1.jpg">
+        <img src="../images/timg2.jpg">
+        <img src="../images/timg3.jpg">
+        <img src="../images/timg4.jpg">
+        <img src="../images/timg5.jpg">
+    </div>
+    <div class="btn">
+        <span class="next">&gt;</span>
+        <span class="prev">&lt;</span>
+    </div>
+    <div class="lib">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<script>
+    var $next = $('.next');
+    var $img = $('.pic img');
+    var length = $img.length;
+    var index = 0;
+    $next.click(function(){
+        index++;
+        index %= length;
+       $img.eq(index).fadeIn(500).siblings().fadeOut(500);
+    });
+
+    var $prev = $('.prev');
+    $prev.click(function(){
+        index++;
+        index %= length;
+        $img.eq(index).fadeIn(500).siblings().fadeOut(500);
+    });
+    /*var imgList = document.getElementsByClassName(pic);*/
+</script>
+</body>
+</html>
