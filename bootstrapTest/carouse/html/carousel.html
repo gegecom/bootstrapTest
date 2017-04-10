@@ -75,6 +75,9 @@
             border-radius: 50%;
             line-height: inherit;
         }
+        .hoverOn{
+            background: #dc615e !important;
+        }
     </style>
     <script src="../js/jquery.min.js"></script>
 </head>
@@ -93,7 +96,7 @@
         <span class="prev">&lt;</span>
     </div>
     <div class="lib">
-        <span></span>
+        <span class="hoverOn"></span>
         <span></span>
         <span></span>
         <span></span>
@@ -113,10 +116,18 @@
 
     var $prev = $('.prev');
     $prev.click(function(){
-        index++;
+        index--;
         index %= length;
         $img.eq(index).fadeIn(500).siblings().fadeOut(500);
     });
+
+    var $libSpan = $('.lib span');
+    $lib.hover(function () {
+        index = $(this).index();
+        $libSpan.eq(index).addClass('hoverOn').siblings().removeClass('hoverOn');
+        $img.eq(index).fadeIn(500).siblings().fadeOut(500);
+    });
+
     /*var imgList = document.getElementsByClassName(pic);*/
 </script>
 </body>
